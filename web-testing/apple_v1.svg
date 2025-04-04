@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="50" height="50">
+  <!-- Simple Apple - Version 1 -->
+  <defs>
+    <radialGradient id="appleGradient" cx="0.3" cy="0.3" r="0.7">
+      <stop offset="0%" style="stop-color:rgb(255,100,100)" />
+      <stop offset="100%" style="stop-color:rgb(200,0,0)" />
+    </radialGradient>
+  </defs>
+  <path d="M 50,25
+           C 30,25 20,40 20,55
+           C 20,80 40,95 50,95
+           C 60,95 80,80 80,55
+           C 80,40 70,25 50,25 Z"
+        fill="url(#appleGradient)"
+        id="apple_body_v1"/>
+  <path d="M 50,25
+           C 55,20 60,15 65,10
+           L 60,5 Z"
+        fill="#8B4513"
+        stroke="#5C2E0F"
+        stroke-width="1"
+        id="apple_stem_v1"/>
+  <path d="M 65,10
+           C 75,5 85,15 80,25 Z"
+        fill="#228B22"
+        stroke="#006400"
+        stroke-width="0.5"
+        id="apple_leaf_v1"/>
+</svg>
