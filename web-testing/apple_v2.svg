@@ -9,7 +9,7 @@
   </defs>
   <g id="apple_group_v2">
       <path id="apple_body_v2"
-            fill="url(#appleGradientV2)"
+            fill="#8B4513" <!--"url(#appleGradientV2)" -->
             d="M 50,25 C 30,25 20,40 20,55 C 20,80 40,95 50,95 C 60,95 80,80 80,55 C 80,40 70,25 50,25 Z"
             />
       <path id="apple_stem_v2"
