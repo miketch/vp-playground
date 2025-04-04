@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const changingImage = document.getElementById('changingImage');
 
     // List of possible apple SVG versions
-    const appleVersions = ['apple_v1.svg', 'apple_v2.svg'];
+    const appleVersions = ['apple_v1.svg', 'apple_v2.svg', "apple_v3.svg"];
 
     // --- Helper Function to get random position (ONLY FOR ITEM CARD) ---
     function getRandomPosition(element) {
