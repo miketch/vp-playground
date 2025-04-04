@@ -2,38 +2,55 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Prevent scrollbars */
+    /* No longer need overflow: hidden usually */
     min-height: 100vh;
-    position: relative;
+    position: relative; /* Keep for positioning container */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack container and instructions vertically */
+    padding-top: 20px; /* Add some space at the top */
+    padding-bottom: 50px; /* Add space for instructions below */
+    box-sizing: border-box; /* Include padding in height calculation */
 }
 
 .positioning-container {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 50px;
-    border: 1px dashed lightgray;
-    /* IMPORTANT: Needed for absolute positioning of children */
-    position: relative;
+    /* --- SIZE ADJUSTMENT --- */
+    width: 450px;       /* Example smaller width */
+    height: 250px;      /* Example smaller height */
+    /* --- END SIZE ADJUSTMENT --- */
+
+    border: 1px dashed darkcyan; /* Make border more visible */
+    position: relative; /* CRUCIAL: For positioning children absolutely inside */
+    /* Remove absolute positioning relative to body */
+    /* position: absolute; */
+    /* Remove stretching properties */
+    /* top: 10px; */
+    /* left: 10px; */
+    /* right: 10px; */
+    /* bottom: 50px; */
+
+    /* Optional: Add some margin if needed, though flexbox handles centering */
+    margin-bottom: 20px; /* Space between container and instructions */
 }
 
 .item-card {
-    /* Styles from previous version... */
+    /* Styles remain the same... */
     background-color: #fff;
     border: 1px solid #ccc;
-    padding: 10px 15px;
+    padding: 8px 12px; /* Slightly smaller padding */
     border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
     display: inline-block;
     cursor: default;
-    /* Position will be set by JavaScript */
+    position: absolute; /* Position set by JS */
     z-index: 10;
+    font-size: 0.9em; /* Slightly smaller font */
 }
 
 .item-name {
     font-weight: bold;
-    margin-right: 10px;
+    margin-right: 8px;
 }
 
 .item-price {
@@ -42,49 +59,52 @@ body {
 
 /* --- APPLE STYLING --- */
 .apple-container {
-    position: absolute; /* Position relative to positioning-container */
-    /* --- SET FIXED POSITION HERE --- */
-    top: 30px;          /* Example top position */
-    left: 40px;         /* Example left position */
-    /* --- --- */
-    z-index: 9; /* Ensure it's behind item-card if they overlap */
+    position: absolute;
+    /* Keep fixed position *within* the smaller container */
+    top: 20px;
+    left: 25px;
+    z-index: 9;
 }
 
 #appleImage {
     display: block;
-    /* SVG size is controlled by its width/height attributes */
-    /* width: 50px; /* Override if needed */
-    /* height: 50px; */
+    width: 40px; /* Make apple slightly smaller if desired */
+    height: 40px;
 }
 /* --- END APPLE STYLING --- */
 
 
 .image-container {
-    /* Styles from previous version... */
-    position: absolute;
+    /* Center relative to the viewport, not the smaller box */
+    position: fixed; /* Use fixed to ignore scrolling */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 5;
+    z-index: 5; /* Keep behind floating items */
 }
 
 #changingImage {
-    /* Styles from previous version... */
+    /* Keep styles */
     max-width: 250px;
     max-height: 250px;
     width: auto;
     height: auto;
     display: block;
     transition: transform 0.1s ease-in-out;
+    border: 1px solid #eee; /* Optional subtle border */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional subtle shadow */
 }
 
 .instructions {
-    /* Styles from previous version... */
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    /* Position is now relative to the flex container (body) */
+    /* position: absolute; */ /* Remove absolute */
+    /* bottom: 10px; */     /* Remove bottom */
+    /* left: 50%; */       /* Remove left */
+    /* transform: translateX(-50%); */ /* Remove transform */
     font-size: 0.9em;
     color: #555;
     text-align: center;
+    margin-top: 0; /* Adjusted by body padding/container margin */
+    width: 90%; /* Prevent it getting too wide */
+    max-width: 500px; /* Max width for instructions */
 }
