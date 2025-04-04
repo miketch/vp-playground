@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         // Decide which version to use (50% chance for each)
-        const chosenVersion = Math.random() < 0.5 ? appleVersions[0] : appleVersions[1];
+        const chosenVersion = appleVersions[Math.floor(Math.random() * 3)];
         appleImage.src = chosenVersion;
         // console.log("Apple version set to:", chosenVersion); // For debugging
     }
