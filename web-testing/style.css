@@ -1,0 +1,90 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbars */
+    min-height: 100vh;
+    position: relative;
+}
+
+.positioning-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 50px;
+    border: 1px dashed lightgray;
+    /* IMPORTANT: Needed for absolute positioning of children */
+    position: relative;
+}
+
+.item-card {
+    /* Styles from previous version... */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    display: inline-block;
+    cursor: default;
+    /* Position will be set by JavaScript */
+    z-index: 10;
+}
+
+.item-name {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.item-price {
+    color: green;
+}
+
+/* --- APPLE STYLING --- */
+.apple-container {
+    position: absolute; /* Position relative to positioning-container */
+    /* --- SET FIXED POSITION HERE --- */
+    top: 30px;          /* Example top position */
+    left: 40px;         /* Example left position */
+    /* --- --- */
+    z-index: 9; /* Ensure it's behind item-card if they overlap */
+}
+
+#appleImage {
+    display: block;
+    /* SVG size is controlled by its width/height attributes */
+    /* width: 50px; /* Override if needed */
+    /* height: 50px; */
+}
+/* --- END APPLE STYLING --- */
+
+
+.image-container {
+    /* Styles from previous version... */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+#changingImage {
+    /* Styles from previous version... */
+    max-width: 250px;
+    max-height: 250px;
+    width: auto;
+    height: auto;
+    display: block;
+    transition: transform 0.1s ease-in-out;
+}
+
+.instructions {
+    /* Styles from previous version... */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9em;
+    color: #555;
+    text-align: center;
+}
